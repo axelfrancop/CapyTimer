@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TimerView: View {
     @StateObject var timing = TimerModel()
-    
     //@State var playButton = ButtonsTimerComponent()
     
     var body: some View {
@@ -25,6 +24,9 @@ struct TimerView: View {
                             .contentTransition(.numericText())
                             .fontWeight(.heavy)
                             .font(.system(size: 60))
+                            .alert(isPresented: $timing.showAlert, content: {
+                                Alert(title: Text("hello world"))
+                            })
                             
                         
                         Circle()
@@ -65,6 +67,13 @@ struct TimerView: View {
                         }
                         .disabled(timing.isRunning)
                     }
+                    
+                    Toggle(isOn: $timing.shortBreak, label: {
+                        Text("Short Break")
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    })
+                    .disabled(timing.isRunning)
+                    .frame(minWidth: 160 ,maxWidth: 160)
                     
                     
                     
