@@ -15,19 +15,19 @@ struct ContentView: View {
         TabView(selection: $selectedTab){
             PersonView()
                 .tabItem {
-                    Image(systemName: "person")
+                    Label("Person", systemImage: "person")
                 }
                 .tag(0)
             
             TimerView()
                 .tabItem {
-                    Image(systemName: "hourglass.circle")
+                    Label("Timer", systemImage: "hourglass.circle")
                 }
                 .tag(1)
             
             SettingsView()
                 .tabItem {
-                    Image(systemName: "gear")
+                    Label("Settings", systemImage: "gear")
                 }
                 .tag(2)
         }

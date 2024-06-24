@@ -10,7 +10,7 @@ import SwiftUI
 struct TimerView: View {
     @StateObject var timing = TimerModel()
     
-    @State var playButton = ButtonsTimerComponent()
+    //@State var playButton = ButtonsTimerComponent()
     
     var body: some View {
         NavigationStack {
@@ -21,8 +21,11 @@ struct TimerView: View {
                     
                     ZStack {
                         Text(timing.formattedTime())
+                            .animation(.default)
+                            .contentTransition(.numericText())
                             .fontWeight(.heavy)
                             .font(.system(size: 60))
+                            
                         
                         Circle()
                             .trim(from: 0, to: 1)
@@ -70,8 +73,9 @@ struct TimerView: View {
                 .navigationBarTitleDisplayMode(.automatic)
                 .padding()
             }
-            
+            .padding(.top, 40)
         }
+         
     }
 }
 #Preview {
