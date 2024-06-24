@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab = 1
+    //determina qual tab vai ser aberta quando abrir o aplicativo
+    
     var body: some View {
-        TimerView()
+        TabView{
+            PersonView()
+                .tabItem {
+                    Image(systemName: "person")
+                }
+                .tag(0)
+            
+            TimerView()
+                .tabItem {
+                    Image(systemName: "hourglass.circle")
+                }
+                .tag(1)
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                }
+                .tag(2)
+        }
+        
+        
     }
 }
 
