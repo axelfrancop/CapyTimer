@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CapyImageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("capivarasmilewithoutbackground")
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: 300, maxHeight: 300)
+            .background(.red)
     }
 }
 

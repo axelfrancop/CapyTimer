@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B322F6C82C29994A003E9258 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B322F6C72C29994A003E9258 /* TimerModel.swift */; };
 		B3DB40922C25AD470051BD51 /* CapyTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB40912C25AD470051BD51 /* CapyTimerApp.swift */; };
 		B3DB40942C25AD470051BD51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB40932C25AD470051BD51 /* ContentView.swift */; };
 		B3DB40962C25AD480051BD51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DB40952C25AD480051BD51 /* Assets.xcassets */; };
 		B3DB40992C25AD480051BD51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DB40982C25AD480051BD51 /* Preview Assets.xcassets */; };
+		B3DB40A02C25AEC60051BD51 /* CapyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */; };
+		B3DB40A22C25B0C30051BD51 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB40A12C25B0C30051BD51 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B322F6C72C29994A003E9258 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		B3DB408E2C25AD470051BD51 /* CapyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3DB40912C25AD470051BD51 /* CapyTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapyTimerApp.swift; sourceTree = "<group>"; };
 		B3DB40932C25AD470051BD51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3DB40952C25AD480051BD51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3DB40982C25AD480051BD51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapyImageView.swift; sourceTree = "<group>"; };
+		B3DB40A12C25B0C30051BD51 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B322F6C42C2997FA003E9258 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		B322F6C52C29980E003E9258 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3DB40A12C25B0C30051BD51 /* TimerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B322F6C62C29991E003E9258 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B322F6C72C29994A003E9258 /* TimerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B3DB40852C25AD470051BD51 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +83,9 @@
 			children = (
 				B3DB40912C25AD470051BD51 /* CapyTimerApp.swift */,
 				B3DB40932C25AD470051BD51 /* ContentView.swift */,
+				B322F6C42C2997FA003E9258 /* Components */,
+				B322F6C52C29980E003E9258 /* Views */,
+				B322F6C62C29991E003E9258 /* Model */,
 				B3DB40952C25AD480051BD51 /* Assets.xcassets */,
 				B3DB40972C25AD480051BD51 /* Preview Content */,
 			);
@@ -139,6 +172,9 @@
 			files = (
 				B3DB40942C25AD470051BD51 /* ContentView.swift in Sources */,
 				B3DB40922C25AD470051BD51 /* CapyTimerApp.swift in Sources */,
+				B322F6C82C29994A003E9258 /* TimerModel.swift in Sources */,
+				B3DB40A22C25B0C30051BD51 /* TimerView.swift in Sources */,
+				B3DB40A02C25AEC60051BD51 /* CapyImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
