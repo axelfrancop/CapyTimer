@@ -12,7 +12,7 @@ struct ContentView: View {
     //determina qual tab vai ser aberta quando abrir o aplicativo
     
     var body: some View {
-        TabView{
+        TabView(selection: $selectedTab){
             PersonView()
                 .tabItem {
                     Image(systemName: "person")
