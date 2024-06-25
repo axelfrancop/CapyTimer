@@ -64,8 +64,4 @@ class TimerModel: ObservableObject {
         shortBreak = false
     }
     
-    
-    
-    
-    
 }

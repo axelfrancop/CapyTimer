@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct TimerView: View {
+    
     @StateObject var timing = TimerModel()
-    //@State var playButton = ButtonsTimerComponent()
-    
     @State var showSheet: Bool = true
-    
-    
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false){
                 VStack(spacing: 60) {
                     ZStack {
+                        ///Timer Count Down
                         Text(timing.formattedTime())
                             .animation(.default)
                             .contentTransition(.numericText())
@@ -32,15 +30,14 @@ struct TimerView: View {
                                 showSheet.toggle()
                             }
                             
-                            
-                        
                         Circle()
                             .trim(from: 0, to: 1)
-                            .stroke(.primary, lineWidth: 10)
+                            .stroke(.primary, lineWidth: 5)
                             .frame(maxWidth: 300)
                             .shadow(radius: 10)
                     }
                     
+                    ///Buttons Play/Stop & Picker Select Time
                     HStack(spacing: 20) {
                         Button(action: {
                             if timing.isRunning {
@@ -54,6 +51,7 @@ struct TimerView: View {
                                 .tint(.primary)
                         }
                         
+                        ///Picker Select Time
                         Picker("Time", selection: $timing.timeRemaining) {
                             ForEach(1..<61) { index in
                                 Text("\(index):00").tag(index * 60)
@@ -63,8 +61,7 @@ struct TimerView: View {
                         .disabled(timing.isRunning)
                         .pickerStyle(.inline)
                         
-                        
-                        
+                        ///Button Stop
                         Button(action: timing.resetTimer) {
                             Image(systemName: "stop.circle")
                                 .font(.system(size: 50))
@@ -73,6 +70,7 @@ struct TimerView: View {
                         .disabled(timing.isRunning)
                     }
                     
+                    ///Short Break Toggle
                     Toggle(isOn: $timing.shortBreak, label: {
                         Text("Short Break 5min")
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -80,15 +78,13 @@ struct TimerView: View {
                     .disabled(timing.isRunning)
                     .frame(minWidth: 200 ,maxWidth: 200)
                     
-                    
-                    
                 }
                 .navigationTitle("CapyTimer")
                 .navigationBarTitleDisplayMode(.automatic)
                 .padding()
             }
             .padding(.top, 40)
-        }
+        }///Show Sheet Picker Select Time
         .overlay(content: {
             ZStack{
                 Color(.tertiarySystemBackground)
@@ -101,9 +97,7 @@ struct TimerView: View {
             .animation(.bouncy, value: showSheet)
             .frame(maxWidth: .infinity, maxHeight: 100)
             .disabled(timing.isRunning)
-            
         })
-         
     }
     
     //MARK: - Model
@@ -123,6 +117,8 @@ struct TimerView: View {
     
     
 }
+
+
 #Preview {
     TimerView()
 }
