@@ -63,4 +63,9 @@ class TimerModel: ObservableObject {
         timeRemaining = 1500
         shortBreak = false
     }
+    
+    
+    
+    
+    
 }

@@ -11,13 +11,14 @@ struct TimerView: View {
     @StateObject var timing = TimerModel()
     //@State var playButton = ButtonsTimerComponent()
     
+    @State var showSheet: Bool = true
+    
+    
+    
     var body: some View {
         NavigationStack {
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 VStack(spacing: 60) {
-                    
-                    
-                    
                     ZStack {
                         Text(timing.formattedTime())
                             .animation(.default)
@@ -25,8 +26,12 @@ struct TimerView: View {
                             .fontWeight(.heavy)
                             .font(.system(size: 60))
                             .alert(isPresented: $timing.showAlert, content: {
-                                Alert(title: Text("hello world"))
+                                Alert(title: Text("GRATZZ!"))
                             })
+                            .onTapGesture {
+                                showSheet.toggle()
+                            }
+                            
                             
                         
                         Circle()
@@ -69,11 +74,11 @@ struct TimerView: View {
                     }
                     
                     Toggle(isOn: $timing.shortBreak, label: {
-                        Text("Short Break")
+                        Text("Short Break 5min")
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     })
                     .disabled(timing.isRunning)
-                    .frame(minWidth: 160 ,maxWidth: 160)
+                    .frame(minWidth: 200 ,maxWidth: 200)
                     
                     
                     
@@ -84,8 +89,39 @@ struct TimerView: View {
             }
             .padding(.top, 40)
         }
+        .overlay(content: {
+            ZStack{
+                Color(.tertiarySystemBackground)
+//                    .opacity(showSheet ? 0 : 1)
+                    .offset(y: showSheet ? -1000 : -300)
+                
+                selectTimerView()
+                    .offset(y: showSheet ? -1000 : -300)
+            }
+            .animation(.bouncy, value: showSheet)
+            .frame(maxWidth: .infinity, maxHeight: 100)
+            .disabled(timing.isRunning)
+            
+        })
          
     }
+    
+    //MARK: - Model
+    @ViewBuilder
+    func selectTimerView()-> some View {
+        VStack{
+            Picker("Time", selection: $timing.timeRemaining) {
+                ForEach(1..<61) { index in
+                    Text("\(index):00").tag(index * 60)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: 100)
+            .disabled(timing.isRunning)
+            .pickerStyle(.inline)
+        }
+    }
+    
+    
 }
 #Preview {
     TimerView()
