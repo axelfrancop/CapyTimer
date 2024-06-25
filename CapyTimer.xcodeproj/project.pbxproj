@@ -19,6 +19,8 @@
 		B3DB40992C25AD480051BD51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3DB40982C25AD480051BD51 /* Preview Assets.xcassets */; };
 		B3DB40A02C25AEC60051BD51 /* CapyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */; };
 		B3DB40A22C25B0C30051BD51 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB40A12C25B0C30051BD51 /* TimerView.swift */; };
+		B3FB9E1E2C2B89F900B04F30 /* ButtonPlayPauseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FB9E1D2C2B89F900B04F30 /* ButtonPlayPauseComponent.swift */; };
+		B3FB9E202C2B8AB700B04F30 /* ButtonStopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FB9E1F2C2B8AB700B04F30 /* ButtonStopComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		B3DB40982C25AD480051BD51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapyImageView.swift; sourceTree = "<group>"; };
 		B3DB40A12C25B0C30051BD51 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B3FB9E1D2C2B89F900B04F30 /* ButtonPlayPauseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlayPauseComponent.swift; sourceTree = "<group>"; };
+		B3FB9E1F2C2B8AB700B04F30 /* ButtonStopComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStopComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		B322F6C42C2997FA003E9258 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B3FB9E1D2C2B89F900B04F30 /* ButtonPlayPauseComponent.swift */,
 				B3DB409F2C25AEC60051BD51 /* CapyImageView.swift */,
 				B322F6CB2C2A0999003E9258 /* ButtonsTimerComponent.swift */,
 				B322F6C92C2A0985003E9258 /* TimerComponent.swift */,
@@ -80,6 +85,7 @@
 		B3DB40852C25AD470051BD51 = {
 			isa = PBXGroup;
 			children = (
+				B3FB9E1F2C2B8AB700B04F30 /* ButtonStopComponent.swift */,
 				B3DB40902C25AD470051BD51 /* CapyTimer */,
 				B3DB408F2C25AD470051BD51 /* Products */,
 			);
@@ -190,9 +196,11 @@
 				B322F6CE2C2A09C8003E9258 /* PickerSelectTimeComponent.swift in Sources */,
 				B322F6D02C2A1392003E9258 /* SettingsView.swift in Sources */,
 				B322F6CC2C2A0999003E9258 /* ButtonsTimerComponent.swift in Sources */,
+				B3FB9E202C2B8AB700B04F30 /* ButtonStopComponent.swift in Sources */,
 				B322F6D22C2A1412003E9258 /* PersonView.swift in Sources */,
 				B3DB40922C25AD470051BD51 /* CapyTimerApp.swift in Sources */,
 				B322F6C82C29994A003E9258 /* TimerModel.swift in Sources */,
+				B3FB9E1E2C2B89F900B04F30 /* ButtonPlayPauseComponent.swift in Sources */,
 				B3DB40A22C25B0C30051BD51 /* TimerView.swift in Sources */,
 				B3DB40A02C25AEC60051BD51 /* CapyImageView.swift in Sources */,
 			);

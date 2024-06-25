@@ -9,19 +9,20 @@ import SwiftUI
 
 struct PickerSelectTimeComponent: View {
     
-    @StateObject var xxx = TimerModel()
+    @ObservedObject var timerModel: TimerModel
     
     var body: some View {
-        Picker("Time", selection: $xxx.timeRemaining) {
+        Picker("Time", selection: $timerModel.timeRemaining) {
             ForEach(1..<61) { index in
                 Text("\(index):00").tag(index * 60)
             }
         }
-        .disabled(xxx.isRunning)
+        .frame(maxWidth: 100, maxHeight: 100)
+        .disabled(timerModel.isRunning)
         .pickerStyle(.inline)
     }
 }
 
 #Preview {
-    PickerSelectTimeComponent()
+    PickerSelectTimeComponent(timerModel: TimerModel())
 }

@@ -16,58 +16,20 @@ struct TimerView: View {
         NavigationStack {
             ScrollView(showsIndicators: false){
                 VStack(spacing: 60) {
-                    ZStack {
-                        ///Timer Count Down
-                        Text(timing.formattedTime())
-                            .animation(.default)
-                            .contentTransition(.numericText())
-                            .fontWeight(.heavy)
-                            .font(.system(size: 60))
-                            .alert(isPresented: $timing.showAlert, content: {
-                                Alert(title: Text("GRATZZ!"))
-                            })
-                            .onTapGesture {
-                                showSheet.toggle()
-                            }
-                            
-                        Circle()
-                            .trim(from: 0, to: 1)
-                            .stroke(.primary, lineWidth: 5)
-                            .frame(maxWidth: 300)
-                            .shadow(radius: 10)
-                    }
+                    TimerComponent(timerModel: timing)
+                        .onTapGesture {
+                            showSheet.toggle()
+                        }
                     
                     ///Buttons Play/Stop & Picker Select Time
                     HStack(spacing: 20) {
-                        Button(action: {
-                            if timing.isRunning {
-                                timing.stopTimer()
-                            } else {
-                                timing.startTimer()
-                            }
-                        }) {
-                            Image(systemName: timing.isRunning ? "pause.circle" : "play.circle")
-                                .font(.system(size: 50))
-                                .tint(.primary)
-                        }
+                        ButtonPlayPauseComponent(timerModel: timing)
                         
                         ///Picker Select Time
-                        Picker("Time", selection: $timing.timeRemaining) {
-                            ForEach(1..<61) { index in
-                                Text("\(index):00").tag(index * 60)
-                            }
-                        }
-                        .frame(maxWidth: 100, maxHeight: 100)
-                        .disabled(timing.isRunning)
-                        .pickerStyle(.inline)
+                        PickerSelectTimeComponent(timerModel: timing)
                         
                         ///Button Stop
-                        Button(action: timing.resetTimer) {
-                            Image(systemName: "stop.circle")
-                                .font(.system(size: 50))
-                                .tint(.red)
-                        }
-                        .disabled(timing.isRunning)
+                        ButtonStopComponent(timerModel: timing)
                     }
                     
                     ///Short Break Toggle
